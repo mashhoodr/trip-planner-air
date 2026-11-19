@@ -61,3 +61,12 @@ export function formatPKR(n) {
 export function formatUSD(n) {
   return '$' + n.toFixed(2);
 }
+
+/** Summary numbers for the "Trip at a glance" card. */
+export function tripSummary(trip) {
+  return {
+    days: dayCount(trip.start, trip.end),
+    stops: trip.stops.length,
+    budget: total(trip.expenses),
+  };
+}
